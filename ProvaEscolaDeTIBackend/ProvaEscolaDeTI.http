@@ -1,0 +1,6 @@
+@ProvaEscolaDeTI_HostAddress = http://localhost:5168
+
+GET {{ProvaEscolaDeTI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
