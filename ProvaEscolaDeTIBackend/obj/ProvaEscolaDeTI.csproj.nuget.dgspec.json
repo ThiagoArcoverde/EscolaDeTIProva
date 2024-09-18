@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\thilu\\source\\repos\\ProvaEscolaDeTI\\ProvaEscolaDeTI.csproj": {}
+    "D:\\Estudos\\ProvaEscolaDeTI\\ProvaEscolaDeTIBackend\\ProvaEscolaDeTI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\thilu\\source\\repos\\ProvaEscolaDeTI\\ProvaEscolaDeTI.csproj": {
+    "D:\\Estudos\\ProvaEscolaDeTI\\ProvaEscolaDeTIBackend\\ProvaEscolaDeTI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\thilu\\source\\repos\\ProvaEscolaDeTI\\ProvaEscolaDeTI.csproj",
+        "projectUniqueName": "D:\\Estudos\\ProvaEscolaDeTI\\ProvaEscolaDeTIBackend\\ProvaEscolaDeTI.csproj",
         "projectName": "ProvaEscolaDeTI",
-        "projectPath": "C:\\Users\\thilu\\source\\repos\\ProvaEscolaDeTI\\ProvaEscolaDeTI.csproj",
+        "projectPath": "D:\\Estudos\\ProvaEscolaDeTI\\ProvaEscolaDeTIBackend\\ProvaEscolaDeTI.csproj",
         "packagesPath": "C:\\Users\\thilu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\thilu\\source\\repos\\ProvaEscolaDeTI\\obj\\",
+        "outputPath": "D:\\Estudos\\ProvaEscolaDeTI\\ProvaEscolaDeTIBackend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

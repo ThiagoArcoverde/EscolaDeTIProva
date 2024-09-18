@@ -14,9 +14,15 @@ builder.Services.AddDbContext<Context>(options =>
 {
     options.UseSqlite("Data Source=EscolaDeTI.db");
 });
+builder.Services.AddCors();
 
 var app = builder.Build();
-
+app.UseCors(option =>
+{
+    option.AllowAnyHeader();
+    option.AllowAnyMethod();
+    option.AllowAnyOrigin();
+});
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -56,7 +62,7 @@ app.MapGet("api/destino/{id:int}", async (Context contexto, int id) =>
 });
 
 app.MapPost("api/viagem", async (Context contexto, CriarViagemDTO dto) =>
-{
+    {
     try
     {
         var viagem = new Viagem(dto.Nome, dto.DataSaida, dto.DataChegada, dto.Valor);
@@ -85,7 +91,7 @@ app.MapPost("api/destino", async (Context contexto, CriarDestinoDTO dto) =>
     }
 });
 
-app.MapPost("api/viagem/destino/adicionar", async (Context contexto, [FromQuery]int destinoId, [FromQuery]int viagemId) =>
+app.MapPatch("api/viagem/destino/adicionar", async (Context contexto, [FromQuery]int destinoId, [FromQuery]int viagemId) =>
 {
     var viagem = await contexto.Viagens.Where(w => w.Id == viagemId).FirstOrDefaultAsync();
     if (viagem is null)
@@ -99,9 +105,11 @@ app.MapPost("api/viagem/destino/adicionar", async (Context contexto, [FromQuery]
     return Results.Ok();
 });
 
-app.MapPost("api/viagem/destino/remover/{id:int}", async (Context contexto, int id) =>
+app.MapPatch("api/viagem/destino/remover/{id:int}", async (Context contexto, int id) =>
 {
-    var viagem = await contexto.Viagens.SingleOrDefaultAsync(w => w.Id == id);
+    var viagem = await contexto.Viagens
+    .Include(w => w.Destino)
+    .SingleOrDefaultAsync(w => w.Id == id);
     if (viagem is null)
         return Results.NotFound("Viagem nao encontrada");
     if (viagem.Destino is null)

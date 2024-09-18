@@ -6,7 +6,7 @@ namespace ProvaEscolaDeTI.Data.Entities
     public class Destino
     {
         public int Id { get; set; }
-        public string Nome { get; set; } = string.Empty;
+        public string Nome { get; set; } = string.Empty; 
         public Destino() { }
         public Destino(string nome)
         {
